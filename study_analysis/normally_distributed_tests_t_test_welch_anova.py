@@ -1,6 +1,6 @@
 import pandas as pd; pd.set_option('mode.chained_assignment','raise');
 import numpy as np
-import scipy
+import scipy.stats
 
 
 
@@ -112,6 +112,9 @@ print("Paired ... you see DIFFERENT values: ", p_before_rel, p_after_rel)
 # Remember, that also in this test the samples must be i.i.d.
 # You are just measuring the same instance but in a before / after scenario.
 # It is still not allowed that the same measuremt is repeated or also present in the other group.
+
+# Remember that you CANNOT sort the array. This is important for the evaluation process of the paired data
+print(scipy.stats.ttest_rel(x,y))
 
 ## ANOVA Testing
 # Is done if MORE than 2 samples.
